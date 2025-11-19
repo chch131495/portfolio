@@ -1,0 +1,88 @@
+@font-face {
+    font-family:'ONE Mobile POP';
+    src:url(../fonts/ONE\ Mobile\ POP.ttf) format('truetype');
+}
+body {
+    width:100%; height:100%; background:pink;
+    margin:0; padding:0; overflow-y: auto; overflow-x:hidden;
+}
+body main {width:100%; height:100%;}
+body main #intro {
+    display:flex; flex-flow:row nowrap; justify-content:space-between; 
+    align-items:stretch; width:100%; height:953px; margin:0 auto; position:relative;
+}
+body main #intro p {font-size:1.25rem; margin-bottom:30PX;}
+body main #intro .left_txt {display:flex; align-items:center; transform:translateX(700px);}
+body main #intro .left_txt h1,
+body main #intro .right_txt h1 {font-family:'ONE Mobile POP'; font-size:6rem;}
+body main #intro .left_txt span {
+    width:20px; height:20px; background:#FDFBF1;
+    display:inline-block; border-radius:50px; margin-left:380px;
+}
+body main #intro .left,
+body main #intro .right {flex:1 1 0; min-width:0; display:flex; flex-direction:column; justify-content:center;}
+body main #intro .left {text-align:center; background:#60ACDE;}
+body main #intro .left p,
+body main #intro .left h1 {color:#FDFBF1}
+body main #intro .left p {}
+body main #intro .left h1 {}
+body main #intro .nav {
+    border-top:1px solid #FDFBF1; display:flex; flex-flow:row; width:1440px; height:71px;
+    justify-content:space-around; align-items:center; position:absolute; bottom:0;
+}
+body main #intro .nav li {}
+body main #intro .nav li a {font-family:'ONE Mobile POP'; margin-left:30px; color:#FDFBF1; font-size:1.5rem; letter-spacing:1px;}
+body main #intro .right {background:#FDFBF1; text-align:center;}
+body main #intro .right p {color:#60ACDE;}
+body main #intro .right .right_txt {display:flex; align-items:center; transform:translateX(50px);}
+body main #intro .right .right_txt h1 {color:#FDFBF1; -webkit-text-stroke: 1.5px #60ACDE;}
+body main #intro .right .right_txt span {
+    display:inline-block; border-radius:50px; margin-right:380px;
+    width:20px; height:20px; background:#60ACDE;
+}
+body main #intro .right ul {
+    border-bottom:1px solid #60ACDE; display:flex; flex-flow:row; width:1440px; height:71px;
+    justify-content:space-around; align-items:center; position:absolute; top:0;
+}
+body main #intro .right li {font-family:'ONE Mobile POP'; margin-left:30px; color:#60ACDE; font-size:1.5rem;}
+/* --------------------------------------------------------------------------------------------------------------------------1. intro 끝 */
+body main #about_me {
+    width:100%; height:100vh; padding:0 80px; box-sizing:border-box;
+    display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center;
+}
+body main #about_me .left2 {display:flex; flex-flow:row nowrap; width:65%; border-right:1px solid #ddd;}
+body main #about_me .left2 figure {flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin-right:40px;}
+body main #about_me .left2 figure img {width:500px; height:500px; object-fit:cover; border-radius:50%; overflow:hidden; margin-right:50px;}
+body main #about_me .left2 figure figcaption {margin-top:20px;}
+body main #about_me .left2 figure figcaption p {font-size:1.25rem; line-height:150%; letter-spacing:-2px;}
+body main #about_me .left2 .content {padding:20px 0; flex:1;}
+body main #about_me .left2 .content article {height:250px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #ddd;}
+body main #about_me .left2 .content h2 {font-size:2.5rem; font-weight:800; margin:30px 0;}
+body main #about_me .left2 .content .sub {}
+body main #about_me .left2 .content p {margin-bottom:30px; font-size:1.25rem;}
+body main #about_me .right2 {width:35%;}
+body main #about_me .right2 section {}
+body main #about_me .right2 section h3 {font-size:2.5rem; font-weight:800; margin:20px 0; padding:0 20px;}
+body main #about_me .right2 section p {border-bottom:1px solid #ddd; padding:0 25px 20px; font-size:1.25rem;}
+body main #about_me .right2 section ul {display:flex; flex-flow:column nowrap;}
+body main #about_me .right2 section ul li {display:flex; align-items:center; gap:10px; margin-bottom:15px; padding:0 20px;}
+body main #about_me .right2 section ul li img {width:80px; height:80px;}
+body main #about_me .right2 section ul li span {display:inline-block; width:100%; border:3px solid #ddd;}
+/* --------------------------------------------------------------------------------------------------------------------------1.about_me 끝 */
+#web {}
+#web > .swiper {}
+#web > .swiper > .swiper-wrapper {}
+#web > .swiper > .swiper-wrapper > .swiper-slide {border:1px solid blue;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info {border:3px solid red;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info >h3 {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > h4 {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > ul {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > ul >li {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > ul >li strong {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > p {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .button_group {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .button_group > a {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .preview {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .preview > figure {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .preview > figure {border:5px solid yellow;}
