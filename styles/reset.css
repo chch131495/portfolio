@@ -9,7 +9,7 @@ table,thead,tbody,tfoot,tr,td,th {
     line-height:1; letter-spacing:-0.02em; word-spacing:0;
     font-size:1em; font-weight:400; font-style:normal;
     color:#000;
-    font-family:'pretendard', '바탕체', sans-serif;
+    font-family:"pretendard","맑은 고딕",sans-serif;
 }
 /* 개별 태그 초기값 */
 a {text-decoration:none;}
