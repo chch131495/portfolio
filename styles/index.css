@@ -2,14 +2,27 @@
     font-family:'ONE Mobile POP';
     src:url(../fonts/ONE\ Mobile\ POP.ttf) format('truetype');
 }
-body {
-    width:100%; height:100%; background:pink;
+@keyframes slideleft {
+    0% {transform:translateX(-100%); opacity:0;} /* 화면 왼쪽 밖에서 시작 */
+    100% {transform:translateX(0); opacity:1;} /* 원래 위치로 이동 */
+}
+@keyframes slideright {
+    0% {transform:translateX(100%); opacity:0;} /* 화면 왼쪽 밖에서 시작 */
+    100% {transform:translateX(0); opacity:1;} /* 원래 위치로 이동 */
+}
+@keyframes up {
+    0% {opacity:0; transform:translateY(50px);}
+    100% {opacity:1; transform:translateY(0);}
+}
+html,body {
+    width:100%; height:100%;
     margin:0; padding:0; overflow-y: auto; overflow-x:hidden;
 }
-body main {width:100%; height:100%;}
+html {scroll-behavior: smooth;}
+body main {width:100%;}
 body main #intro {
     display:flex; flex-flow:row nowrap; justify-content:space-between; 
-    align-items:stretch; width:100%; height:953px; margin:0 auto; position:relative;
+    align-items:stretch; width:100%; height:100vh; margin:0 auto; position:relative;
 }
 body main #intro p {font-size:1.25rem; margin-bottom:30PX;}
 body main #intro .left_txt {display:flex; align-items:center; transform:translateX(700px);}
@@ -21,18 +34,18 @@ body main #intro .left_txt span {
 }
 body main #intro .left,
 body main #intro .right {flex:1 1 0; min-width:0; display:flex; flex-direction:column; justify-content:center;}
-body main #intro .left {text-align:center; background:#60ACDE;}
+body main #intro .left {text-align:center; background:#60ACDE; animation:slideleft 1s ease-out forwards; opacity:0;}
 body main #intro .left p,
 body main #intro .left h1 {color:#FDFBF1}
 body main #intro .left p {}
 body main #intro .left h1 {}
 body main #intro .nav {
     border-top:1px solid #FDFBF1; display:flex; flex-flow:row; width:1440px; height:71px;
-    justify-content:space-around; align-items:center; position:absolute; bottom:0;
+    justify-content:space-around; align-items:center; position:absolute; bottom:0; animation:slideleft 1s ease-out forwards; opacity:0;
 }
 body main #intro .nav li {}
 body main #intro .nav li a {font-family:'ONE Mobile POP'; margin-left:30px; color:#FDFBF1; font-size:1.5rem; letter-spacing:1px;}
-body main #intro .right {background:#FDFBF1; text-align:center;}
+body main #intro .right {background:#FDFBF1; text-align:center; animation:slideright 1s ease-out forwards; opacity:0;}
 body main #intro .right p {color:#60ACDE;}
 body main #intro .right .right_txt {display:flex; align-items:center; transform:translateX(50px);}
 body main #intro .right .right_txt h1 {color:#FDFBF1; -webkit-text-stroke: 1.5px #60ACDE;}
@@ -47,42 +60,93 @@ body main #intro .right ul {
 body main #intro .right li {font-family:'ONE Mobile POP'; margin-left:30px; color:#60ACDE; font-size:1.5rem;}
 /* --------------------------------------------------------------------------------------------------------------------------1. intro 끝 */
 body main #about_me {
-    width:100%; height:100vh; padding:0 80px; box-sizing:border-box;
+    width:100%; height:100vh; padding:0 80px; box-sizing:border-box; background:#FDFBF1;
     display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center;
 }
 body main #about_me .left2 {display:flex; flex-flow:row nowrap; width:65%; border-right:1px solid #ddd;}
-body main #about_me .left2 figure {flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin-right:40px;}
+/* ------------------------------------------------------------------------------------------------------------ ----------*/
+body main #about_me figure,
+body main #about_me .content article,
+body main #about_me .right2 section {opacity:0; transform:translateY(50px); transition:none;}
+/* ------------------------------------------------------------------------------------------------애니메이션 공통(about_me) */
+body main #about_me .left2 figure {
+    flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin-right:40px;
+    animation:up 1s ease-out forwards; animation-delay:1.5s;
+}
 body main #about_me .left2 figure img {width:500px; height:500px; object-fit:cover; border-radius:50%; overflow:hidden; margin-right:50px;}
 body main #about_me .left2 figure figcaption {margin-top:20px;}
 body main #about_me .left2 figure figcaption p {font-size:1.25rem; line-height:150%; letter-spacing:-2px;}
 body main #about_me .left2 .content {padding:20px 0; flex:1;}
-body main #about_me .left2 .content article {height:250px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #ddd;}
+body main #about_me .left2 .content article {animation:up 1s ease-out forwards; animation-delay:2s; height:250px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #ddd;}
 body main #about_me .left2 .content h2 {font-size:2.5rem; font-weight:800; margin:30px 0;}
 body main #about_me .left2 .content .sub {}
 body main #about_me .left2 .content p {margin-bottom:30px; font-size:1.25rem;}
 body main #about_me .right2 {width:35%;}
-body main #about_me .right2 section {}
+body main #about_me .right2 section {animation:up 1s ease-out forwards; animation-delay:2.5s;}
 body main #about_me .right2 section h3 {font-size:2.5rem; font-weight:800; margin:20px 0; padding:0 20px;}
 body main #about_me .right2 section p {border-bottom:1px solid #ddd; padding:0 25px 20px; font-size:1.25rem;}
 body main #about_me .right2 section ul {display:flex; flex-flow:column nowrap;}
 body main #about_me .right2 section ul li {display:flex; align-items:center; gap:10px; margin-bottom:15px; padding:0 20px;}
 body main #about_me .right2 section ul li img {width:80px; height:80px;}
 body main #about_me .right2 section ul li span {display:inline-block; width:100%; border:3px solid #ddd;}
-/* --------------------------------------------------------------------------------------------------------------------------1.about_me 끝 */
-#web {}
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------2.about_me 끝 */
+#web {width:100%; height:100vh; overflow:hidden;}
+#web .swiper,
+#web .swiper-wrapper,
+#web .swiper-slide {height:100% !important; min-height: 1000px;}
 #web > .swiper {}
 #web > .swiper > .swiper-wrapper {}
-#web > .swiper > .swiper-wrapper > .swiper-slide {border:1px solid blue;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info {border:3px solid red;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info >h3 {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > h4 {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > ul {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > ul >li {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > ul >li strong {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > p {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .button_group {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .button_group > a {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .preview {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .preview > figure {}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .preview > figure {border:5px solid yellow;}
+#web > .swiper > .swiper-wrapper > .swiper-slide {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project {width:100%; height:100%; display:flex; flex-flow:row nowrap;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info {position:relative; z-index:1; width:50%; height:100%; padding:50px 100px; box-sizing:border-box; display:flex;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info::before {content:''; position:absolute; inset:0; background:rgba(238, 211, 211, 0.5); pointer-events:none; z-index:-1;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .web_inner {width:100%; padding:150px; height:100%;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info h3 {font-weight:800; font-size:5rem; line-height:1.5;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info h4 {font-weight:800; font-size:3rem; line-height:1.5; margin-bottom:30px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul {margin-bottom:80px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul >li {font-size:1.25rem; margin-bottom:30px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul >li strong { line-height:1.5; font-weight:700; font-size:1.25rem;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info p {font-size:1.4rem; line-height:1.5; letter-spacing:-2; margin-bottom:80px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info .button_group {}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info .button_group > a {font-size:1.3rem; border-radius:10px; color:#fff; padding:15px 30px; margin-right:20px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview {/* 기존 값 width:50%; height:100%; flex:none; */
+    width:50%; height:100%; display:flex; justify-content:center; align-items:center;
+}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview > figure {width:100%; height:100%; display:flex; justify-content:center; align-items:center;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview > figure > img {width:100vw; object-fit:cover; object-fit:contain; padding:0 150px;}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------3. 슬라이드 공통부분 */
+#web .swiper-slide.project1 .web_info {background:url(../images/web_bg01.jpg) no-repeat center / cover;}
+#web .swiper-slide.project2 .web_info {background:url(../images/web_bg02.jpg) no-repeat center / cover;}
+#web .swiper-slide.project3 .web_info {background:url(../images/web_bg03.jpg) no-repeat center / cover;}
+/* #web .swiper .swiper-slide.project1 .web_info.thebodyshop .web_inner {border:5px solid red;} */
+#web .swiper .swiper-slide.project1 .web_info.thebodyshop h3,
+#web .swiper .swiper-slide.project1 .web_info.thebodyshop h4, 
+#web .swiper .swiper-slide.project1 .web_info.thebodyshop ul li strong {color:#004938;}
+#web .swiper > .swiper-wrapper > .swiper-slide.swiper-slide.project1 > .web_project > .preview.bg1 > figure {background:#003333;}
+#web .swiper .swiper-slide.project1 .web_info.thebodyshop .button_group.btn1 > a {background:#004938;}
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------3.슬라이드 개별 1*/
+#web .swiper .swiper-slide.project2 .web_info.didim h3,
+#web .swiper .swiper-slide.project2 .web_info.didim h4, 
+#web .swiper .swiper-slide.project2 .web_info.didim ul li strong {color:#232D67;}
+#web .swiper > .swiper-wrapper > .swiper-slide.swiper-slide.project2 > .web_project > .preview.bg2 > figure {background:#232D67;}
+#web .swiper .swiper-slide.project2 .web_info.didim .button_group.btn2 > a {background:#232D67;}
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------3.슬라이드 개별 2*/
+#web .swiper .swiper-slide.project3 .web_info.xexy h3,
+#web .swiper .swiper-slide.project3 .web_info.xexy h4, 
+#web .swiper .swiper-slide.project3 .web_info.xexy ul li strong {color:#000;}
+#web .swiper > .swiper-wrapper > .swiper-slide.swiper-slide.project3 > .web_project > .preview.bg3 > figure {background:#444;}
+#web .swiper .swiper-slide.project3 .web_info.xexy .button_group.btn3 > a {background:#000;}
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------3.슬라이드 개별 3 (끝) */
+#grophics .design {background:#FDFBF1; width:100vw; height:100vh;}
+#grophics .design .title {border:3px solid red;}
+#grophics .design .title p {}
+#grophics .design .title h2 {}
+#grophics .design .title h2 strong {}
+#grophics .design .sub_bnr {}
+#grophics .design .sub_bnr .swiper-wrapper {}
+#grophics .design .sub_bnr .swiper-wrapper .swiper-slide {}
+#grophics .design .sub_bnr .swiper-wrapper .swiper-slide small {}
+#grophics .design .sub_bnr .swiper-wrapper .swiper-slide big {}
+#grophics .design .main_bnr {}
+#grophics .design .main_bnr .swiper-wrapper {}
+#grophics .design .main_bnr .swiper-wrapper .swiper-slide {}
