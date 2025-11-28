@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new Swiper('#grophics .swiper', {
         // ... (Graphics Swiper 옵션) ...
         slidesPerView: 'auto',
-        spaceBetween: 30,
+        spaceBetween: 10,
         centeredSlides: true,
         loop: true,
         // ...

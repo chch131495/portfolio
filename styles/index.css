@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {box-sizing:border-box;}
+
 @font-face {
     font-family:'ONE Mobile POP';
     src:url(../fonts/ONE\ Mobile\ POP.ttf) format('truetype');
@@ -41,34 +39,35 @@ body main #intro {
     align-items:stretch; width:100%; height:100vh; margin:0 auto; position:relative;
 }
 body main #intro p {font-size:1.25rem; margin-bottom:30PX;}
-body main #intro .left_txt {display:flex; align-items:center; transform:translateX(700px);}
+body main #intro .left {width:50%;}
+body main #intro .left_txt {display:flex; align-items:center; justify-content:center; /* width:50%; text-align:left; */}
 body main #intro .left_txt h1,
 body main #intro .right_txt h1 {font-family:'ONE Mobile POP'; font-size:4rem;}
 body main #intro .left_txt h1 {}
 body main #intro .left_txt span {
     width:20px; height:20px; background:#FDFBF1;
-    display:inline-block; border-radius:50px; margin-left:380px;
+    display:inline-block; border-radius:50px; margin-left:380px; position:absolute; right:100px;
 }
 body main #intro .left,
 body main #intro .right {flex:1 1 0; min-width:0; display:flex; flex-direction:column; justify-content:center;}
 body main #intro .left {text-align:center; background:#60ACDE; animation:slideleft 1s ease-out forwards; opacity:0;}
 body main #intro .left p,
-body main #intro .left h1 {color:#FDFBF1}
-body main #intro .left p {}
-body main #intro .left h1 {}
+body main #intro .left h1 {color:#FDFBF1;}
+body main #intro .left p {width:100%;}
+body main #intro .left h1 {padding-left:30px;}
 body main #intro .nav {
     border-top:1px solid #FDFBF1; display:flex; flex-flow:row; max-width:1440px; height:71px; box-sizing:border-box;
     justify-content:space-around; align-items:center; position:absolute; bottom:0; animation:slideleft 1s ease-out forwards; opacity:0;
 }
 body main #intro .nav li {}
 body main #intro .nav li a {font-family:'ONE Mobile POP'; margin-left:30px; color:#FDFBF1; font-size:1.5rem; letter-spacing:1px;}
-body main #intro .right {background:#FDFBF1; text-align:center; animation:slideright 1s ease-out forwards; opacity:0;}
-body main #intro .right p {color:#60ACDE;}
-body main #intro .right .right_txt {display:flex; align-items:center; transform:translateX(50px);}
-body main #intro .right .right_txt h1 {color:#FDFBF1; -webkit-text-stroke: 1.5px #60ACDE;}
+body main #intro .right {background:#FDFBF1; width:50%; text-align:right; animation:slideright 1s ease-out forwards; opacity:0;}
+body main #intro .right p {color:#60ACDE; width:100%; text-align:center;}
+body main #intro .right .right_txt {display:flex; align-items:center; margin-right:400px;}
+body main #intro .right .right_txt h1 {color:#FDFBF1; -webkit-text-stroke: 1.5px #60ACDE; width:100%;}
 body main #intro .right .right_txt span {
-    display:inline-block; border-radius:50px; margin-right:380px;
-    width:20px; height:20px; background:#60ACDE;
+    display:inline-block; border-radius:50px; 
+    width:20px; height:20px; background:#60ACDE; position:absolute; left:100px;
 }
 body main #intro .right ul {
     border-bottom:1px solid #60ACDE; display:flex; flex-flow:row; width:1440px; height:71px;
@@ -77,7 +76,7 @@ body main #intro .right ul {
 body main #intro .right li {font-family:'ONE Mobile POP'; margin-left:30px; color:#60ACDE; font-size:1.5rem;}
 /* --------------------------------------------------------------------------------------------------------------------------1. intro 끝 */
 body main #about_me {
-    width:100%; height:100vh; padding:0 80px; box-sizing:border-box; background:#FDFBF1;
+    width:100%; /* height:100vh; */ padding:0 80px; box-sizing:border-box; background:#FDFBF1;
     display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center;
 }
 body main #about_me .left2 {display:flex; flex-flow:row nowrap; width:65%; border-right:1px solid #ddd;}
@@ -87,24 +86,24 @@ body main #about_me .content article,
 body main #about_me .right2 section {opacity:0; transform:translateY(50px); transition:none;}
 /* ------------------------------------------------------------------------------------------------애니메이션 공통(about_me) */
 body main #about_me .left2 figure {
-    flex-shrink:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin-right:40px;
-    animation:up 3s ease-out forwards; animation-delay:1.5s;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+    animation:up 3s ease-out forwards; animation-delay:1.5s; margin-right:30px;
 }
-body main #about_me .left2 figure img {width:500px; height:500px; max-width:100%;; object-fit:cover; border-radius:50%; overflow:hidden; margin-right:50px;}
+body main #about_me .left2 figure img {width:358px; height:399px; max-width:100%;; object-fit:cover; border-radius:50%; overflow:hidden;}
 body main #about_me .left2 figure figcaption {margin-top:20px;}
-body main #about_me .left2 figure figcaption p {font-size:1.25rem; line-height:150%; letter-spacing:-2px;}
+body main #about_me .left2 figure figcaption p {/* font-size:1.25rem; */ line-height:150%; letter-spacing:-2px;}
 body main #about_me .left2 .content {padding:20px 0; flex:1;}
 body main #about_me .left2 .content article {animation:up 3s ease-out forwards; animation-delay:2s; height:250px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #ddd;}
-body main #about_me .left2 .content h2 {font-size:2.5rem; font-weight:800; margin:30px 0;}
+body main #about_me .left2 .content h2 {font-size:1.25rem; font-weight:800; margin:30px 0;}
 body main #about_me .left2 .content .sub {}
-body main #about_me .left2 .content p {margin-bottom:30px; font-size:1.25rem;}
+body main #about_me .left2 .content p {margin-bottom:30px;}
 body main #about_me .right2 {width:35%;}
 body main #about_me .right2 section {animation:up 3s ease-out forwards; animation-delay:2.5s;}
-body main #about_me .right2 section h3 {font-size:2.5rem; font-weight:800; margin:20px 0; padding:0 20px;}
-body main #about_me .right2 section p {border-bottom:1px solid #ddd; padding:0 25px 20px; font-size:1.25rem;}
+body main #about_me .right2 section h3 {font-size:1.25rem; font-weight:800; margin:20px 0; padding:0 20px;}
+body main #about_me .right2 section p {border-bottom:1px solid #ddd; padding:0 25px 20px;}
 body main #about_me .right2 section ul {display:flex; flex-flow:column nowrap;}
 body main #about_me .right2 section ul li {display:flex; align-items:center; gap:10px; margin-bottom:15px; padding:0 20px;}
-body main #about_me .right2 section ul li img {width:80px; height:80px;}
+body main #about_me .right2 section ul li img {width:30px; height:30px;}
 body main #about_me .right2 section ul li span {display:inline-block; width:100%; border:3px solid #ddd;}
 /* -------------------------------------------------------------------------------------------2.about_me 끝 */
 #web {width:100%; height:100vh; overflow:hidden; /* 추가 */ position:relative;}
@@ -115,26 +114,26 @@ body main #about_me .right2 section ul li span {display:inline-block; width:100%
 #web > .swiper > .swiper-wrapper {}
 #web > .swiper > .swiper-wrapper > .swiper-slide {}
 #web > .swiper > .swiper-wrapper > .swiper-slide > .web_project {width:100%; height:100%; display:flex; flex-flow:row nowrap;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info {position:relative; z-index:1; width:50%; height:100%; padding:50px 100px; box-sizing:border-box; display:flex;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info {
+    position:relative; z-index:1; width:50%; height:100%; box-sizing:border-box; display:flex; justify-content:center; align-items:center;}
 #web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info::before {content:''; position:absolute; inset:0; background:rgba(238, 211, 211, 0.5); pointer-events:none; z-index:-1;}
 #web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info > .web_inner {width:100%; padding:150px; height:100%;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info h3 {font-weight:800; font-size:5rem; line-height:1.5;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info h4 {font-weight:800; font-size:3rem; line-height:1.5; margin-bottom:30px;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul {margin-bottom:80px;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul >li {font-size:1.25rem; margin-bottom:30px;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul >li strong { line-height:1.5; font-weight:700; font-size:1.25rem;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info p {font-size:1.4rem; line-height:1.5; letter-spacing:-2; margin-bottom:80px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info h3 {font-weight:800; font-size:2.5rem; line-height:1.5;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info h4 {font-weight:800; font-size:1.75rem; line-height:1.5; margin-bottom:30px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul {margin-bottom:50px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul >li {margin-bottom:15px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info ul >li strong { line-height:1.5; font-weight:700; font-size:1.125rem;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info p {font-size:1.125rem; line-height:1.8; letter-spacing:-2px; margin-bottom:80px;}
 #web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info .button_group {}
 #web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info .button_group > a {
-    font-size:1.3rem; border-radius:10px; color:#fff; padding:15px 30px; margin-right:20px;
+    font-size:1.125rem; border-radius:10px; color:#fff; padding:10px; margin-right:10px; /* width:125px; height:47px; */
     transition:all 300ms ;
 }
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info .button_group > a:hover {padding:15px 50px;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview {/* 기존 값 width:50%; height:100%; flex:none; */
-    width:50%; height:100%; display:flex; justify-content:center; align-items:center;   
-}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .web_info .button_group > a:hover {padding:10px 20px;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview {
+width:50%; height:100%; display:flex; justify-content:center; align-items:center;}
 #web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview > figure {width:100%; height:100%; display:flex; justify-content:center; align-items:center; padding:0 150px;}
-#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview > figure > img {width:100%; max-width:100%; height:auto; object-fit:contain; display:block;}
+#web > .swiper > .swiper-wrapper > .swiper-slide > .web_project > .preview > figure > img {width:953px; height:630px; object-fit:cover; display:block;}
 /*---------------------------------------------------------------------------------------커스텀 컨트롤 위치 */
 #web .controls {position:absolute; bottom:50px; right:80px; z-index:10; display:flex; align-items:center; padding:10px;}
 #web .controls .page_track {
@@ -200,19 +199,19 @@ body main #about_me .right2 section ul li span {display:inline-block; width:100%
     background:#FDFBF1; width:100%; height:100%; padding:150px 100px;
     display:flex; justify-content:space-around; align-items:center;
 }
-#grophics .design .design_left {display:flex; flex-direction:column; gap:10px; /* width:1600px; */ overflow:hidden;}
-#grophics .design .title {}
-#grophics .design .title p {font-size:1.25rem; margin-bottom:15px; color:#444;}
-#grophics .design .title h2 {font-size:2.188rem; font-weight:800; line-height:2; color:#444; margin-bottom:15px;}
+#grophics .design .design_left {display:flex; flex-direction:column; gap:10px; height:100%; margin-right:30px; width:1220px;}
+#grophics .design .title {width:1190px; height:147px;}
+#grophics .design .title p {font-size:1.125rem; color:#444;}
+#grophics .design .title h2 {font-size:2.188rem; font-weight:800; line-height:2; color:#444;}
 #grophics .design .title h2 strong {color:#60ACDE; font-weight:800;}
 /* --------------------------------------------------------------------------------------------------------4(design). 슬라이드 공통 부분 */
 #grophics .design .design_left .swiper {}
 #grophics .design .design_left .swiper .swiper-wrapper {}
 #grophics .design .design_left .swiper .swiper-wrapper .swiper-slide {}
 /* --------------------------------------------------------------------------------------------------------4. 개별 슬라이드 부분 */
-#grophics .design .design_left .swiper.b1 {width:100%; height:162px; border-radius:10px; margin-bottom:15px;}
+#grophics .design .design_left .swiper.b1 {width:1190px; border-radius:10px;}
 #grophics .design .design_left .swiper.b1 .swiper-wrapper {width:100%; height:162px;}
-#grophics .design .design_left .swiper.b1 .swiper-wrapper .swiper-slide {width:400px; height:162px; /* margin-right:15px; */}
+#grophics .design .design_left .swiper.b1 .swiper-wrapper .swiper-slide {width:400px; height:162px;}
 #grophics .design .design_left .swiper.b1 .small1 {background:skyblue;}
 #grophics .design .design_left .swiper.b1 .small2 {background:pink;}
 #grophics .design .design_left .swiper.b1 .small3 {background:yellow;}
@@ -220,7 +219,7 @@ body main #about_me .right2 section ul li span {display:inline-block; width:100%
 #grophics .design .design_left .swiper.b1 .small5 {background:purple;}
 #grophics .design .design_left .swiper.b1 .small6 {background:beige;}
 /* --------------------------------------------------------------------------------------------------------4-1.배너 (개별 슬라이드 끝) */
-#grophics .design .design_left .swiper.s2 {width:100%; margin:0; border-radius:10px;}
+#grophics .design .design_left .swiper.s2 {width:1190px; margin:0; border-radius:10px;}
 #grophics .design .design_left .swiper.s2 .swiper-wrapper {width:100%; height:388px;}
 #grophics .design .design_left .swiper.s2 .swiper-wrapper .swiper-slide {width:504px; height:388px; /* margin-right:15px; */}
 #grophics .design .design_left .swiper.s2 .sns1 {background:beige;}
@@ -229,6 +228,10 @@ body main #about_me .right2 section ul li span {display:inline-block; width:100%
 #grophics .design .design_left .swiper.s2 .sns4 {background:palegreen;}
 #grophics .design .design_left .swiper.s2 .sns5 {background:palegoldenrod;}
 /* --------------------------------------------------------------------------------------------------------4-2.sns (개별 슬라이드 끝) */
+#grophics .design .design_left,
+#grophics .design .design_right {height:100%; display:flex; flex-direction:column; justify-content:space-between;}
+#grophics .design .design_left {flex-grow:1; gap:10px; margin-right:30px;}
+#grophics .design .design_right {width:500px; flex-shrink:0;}
 #grophics .design .design_right .design_right {flex:30%; height:100%; display:flex; flex-direction:column; min-width:0;}
 #grophics .design .design_right .swiper.s3 {width:500px; height:800px; border-radius:10px;}
 #grophics .design .design_right .swiper.s3 .poster1 {background:skyblue;}
